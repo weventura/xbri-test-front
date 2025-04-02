@@ -1,0 +1,49 @@
+<section class="list">
+    <div class="list__header">
+        <h1>Preencha o formulário para criar um item</h1>
+    </div>
+
+    <div class="list__form">
+        <form nz-form [formGroup]="createForm" (ngSubmit)="onSave()">
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Nome</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="">
+                <input nz-input formControlName="name" id="name" />
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="category">Categoria</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="">
+                  <input nz-input formControlName="category" id="category" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="quantity">Quantidade</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="">
+                  <input nz-input formControlName="quantity" id="quantity" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="price">Preço</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="">
+                  <input nz-input formControlName="price" id="price" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="active">Ativo</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="">
+                <label nz-checkbox formControlName="active" id="active"></label>
+                </nz-form-control>
+            </nz-form-item>
+
+            <button nz-button nzType="primary" (click)="onBack()">Cancelar</button>
+            <button nz-button nzType="primary" type="submit" [disabled]="createForm.invalid">Salvar</button>
+        </form>
+
+    </div>
+
+</section>
